@@ -1,0 +1,57 @@
+/* Style for the main KanyeAndRobot container */
+.kanye-robot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Style for each image and quote pair */
+.image-quote-pair {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Robot image styling */
+.robot-image img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Kanye quote styling */
+.kanye-quote h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    line-height: 1.4;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .image-quote-pair {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .robot-image img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .kanye-quote h1 {
+        font-size: 1.2rem;
+    }
+}
