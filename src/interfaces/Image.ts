@@ -1,3 +1,5 @@
 export interface Image {
-    imageUrl: string;
+    firstImageUrl: string;
+    secondImageUrl: string;
+    thirdImageUrl: string;
 }

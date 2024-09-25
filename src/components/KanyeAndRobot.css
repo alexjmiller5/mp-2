@@ -8,50 +8,71 @@
 
 /* Style for each image and quote pair */
 .image-quote-pair {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+    width: 80%;
     padding: 20px;
+    margin-bottom: 30px;
     border: 2px solid #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Style for the main quote title */
+.image-quote-pair h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container for the three image-quote thirds */
+.image-quote-thirds-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style for each image-quote third */
+.image-quote-third {
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Labels */
+.image-label, .quote-part-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 /* Robot image styling */
 .robot-image img {
-    max-width: 150px;
+    max-width: 100%;
     height: auto;
-    margin-right: 20px;
-    border-radius: 50%;
+    border-radius: 10%;
     border: 2px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 /* Kanye quote styling */
 .kanye-quote h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 1rem; /* Smaller font size for the quote parts */
+    font-weight: normal;
+    color: #666;
     margin: 0;
     padding: 0;
-    text-align: left;
-    max-width: 600px;
+    text-align: center;
     line-height: 1.4;
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
-    .image-quote-pair {
+    .image-quote-thirds-container {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
-    .robot-image img {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .kanye-quote h1 {
-        font-size: 1.2rem;
+    .image-quote-third {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
