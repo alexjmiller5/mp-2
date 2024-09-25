@@ -2,39 +2,89 @@
 import { ImageAndQuote } from "../interfaces/ImageAndQuote";
 import KanyeQuote from "./KanyeQuote";
 import RobotImage from "./RobotImage";
-import './KanyeAndRobot.css';
+import styled from 'styled-components';
+
+
+const KanyeRobotContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+`;
+
+const ImageQuotePair = styled.div`
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+const QuoteTitle = styled.h1`
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+`;
+
+const ImageQuoteThirdsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+`;
+
+const ImageQuoteThird = styled.div`
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+`;
+
+const Label = styled.div`
+    font-weight: bold;
+    margin-bottom: 5px;
+`;
+
 
 export default function KanyeAndRobot(props: { data: ImageAndQuote[] }) {
     return (
-        <div className="kanye-robot-container">
+        <KanyeRobotContainer>
             {props.data.map((imageAndQuote, index) => (
-                <div key={index} className="image-quote-pair">
-                    <h1>Quote</h1>
-                    <div className="image-quote-thirds-container">
+                <ImageQuotePair key={index}>
+                    <QuoteTitle>Quote</QuoteTitle>
+                    <ImageQuoteThirdsContainer>
                         {/* First Third */}
-                        <div className="image-quote-third">
-                            <div className="image-label">First Image</div>
+                        <ImageQuoteThird>
+                            <Label>First Image</Label>
                             <RobotImage image={{ imageUrl: imageAndQuote.image.firstImageUrl }} />
-                            <div className="quote-part-label">First Third:</div>
+                            <Label>First Third:</Label>
                             <KanyeQuote quote={{ quote: imageAndQuote.quote.firstPart }} />
-                        </div>
+                        </ImageQuoteThird>
                         {/* Second Third */}
-                        <div className="image-quote-third">
-                            <div className="image-label">Second Image</div>
+                        <ImageQuoteThird>
+                            <Label>Second Image</Label>
                             <RobotImage image={{ imageUrl: imageAndQuote.image.secondImageUrl }} />
-                            <div className="quote-part-label">Second Third:</div>
+                            <Label>Second Third:</Label>
                             <KanyeQuote quote={{ quote: imageAndQuote.quote.secondPart }} />
-                        </div>
+                        </ImageQuoteThird>
                         {/* Third Third */}
-                        <div className="image-quote-third">
-                            <div className="image-label">Third Image</div>
+                        <ImageQuoteThird>
+                            <Label>Third Image</Label>
                             <RobotImage image={{ imageUrl: imageAndQuote.image.thirdImageUrl }} />
-                            <div className="quote-part-label">Third Third:</div>
+                            <Label>Third Third:</Label>
                             <KanyeQuote quote={{ quote: imageAndQuote.quote.thirdPart }} />
-                        </div>
-                    </div>
-                </div>
+                        </ImageQuoteThird>
+                    </ImageQuoteThirdsContainer>
+                </ImageQuotePair>
             ))}
-        </div>
+        </KanyeRobotContainer>
     );
 }
